@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,17 +10,17 @@
     <style>
         /* General Styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            color: #ffffff;
             line-height: 1.6;
         }
 
         a {
-            text-decoration: none; 
-            color: #4CAF50;
+            text-decoration: none;
+            color: #1e90ff;
         }
 
         a:hover {
@@ -29,38 +29,47 @@
 
         /* Header */
         header {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #1e90ff, #0077cc);
             color: white;
-            padding: 1.5rem;
+            padding: 3rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
+            font-weight: 600;
         }
 
         header p {
             margin: 0.5rem 0 0;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            font-weight: 300;
         }
 
         /* Navigation */
         nav {
-            background-color: #333;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
             padding: 1rem;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
             color: white;
-            margin: 0 1rem;
+            margin: 0 1.5rem;
             font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #4CAF50;
+            color: #1e90ff;
         }
 
         /* Main Content */
@@ -72,99 +81,115 @@
 
         /* Tool Categories */
         .category {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
         .category h2 {
-            color: #4CAF50;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #4CAF50;
+            color: #1e90ff;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #1e90ff;
             display: inline-block;
+            font-weight: 600;
         }
 
         .tool-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .tool-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .tool-card img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 1rem;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover img {
+            transform: scale(1.1);
         }
 
         .tool-card h3 {
             margin: 0;
-            font-size: 1.2rem;
-            color: #333;
+            font-size: 1.4rem;
+            color: #ffffff;
+            font-weight: 600;
         }
 
         .tool-card p {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 1rem;
+            color: #cccccc;
+            margin: 1rem 0 0;
         }
 
         /* Call to Action */
         .cta {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #1e90ff, #0077cc);
             color: white;
-            padding: 2rem;
+            padding: 3rem;
             text-align: center;
-            border-radius: 10px;
-            margin: 2rem 0;
+            border-radius: 15px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .cta h2 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            font-weight: 600;
         }
 
         .cta p {
-            margin: 0.5rem 0 1.5rem;
-            font-size: 1.1rem;
+            margin: 1rem 0 2rem;
+            font-size: 1.2rem;
+            font-weight: 300;
         }
 
         .cta a {
             background-color: white;
-            color: #4CAF50;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            font-size: 1rem;
+            color: #1e90ff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .cta a:hover {
             background-color: #f4f4f9;
-            color: #45a049;
+            color: #0077cc;
         }
 
         /* Footer */
         footer {
-            background-color: #333;
+            background-color: #0a0a0a;
             color: white;
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
+            padding: 2rem;
+            margin-top: 3rem;
         }
 
         footer p {
             margin: 0;
+            font-size: 1rem;
+            font-weight: 300;
         }
 
         /* Responsive Design */
@@ -178,10 +203,15 @@
             }
 
             .cta h2 {
-                font-size: 1.5rem;
+                font-size: 2rem;
+            }
+
+            .cta a {
+                padding: 0.75rem 1.5rem;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -204,47 +234,26 @@
         <section id="image-tools" class="category">
             <h2>Image Tools</h2>
             <div class="tool-grid">
-                <section id="image-tools" class="category">
-    <h2>Image Tools</h2>
-    <div class="tool-grid">
-        <!-- Image Compressor -->
-        <div class="tool-card">
-            <a href /Tool/img-compress.html target="_blank" style="text-decoration: none; color: inherit;">
-                <img src="https://via.placeholder.com/60" alt="Image Compressor">
-                <h3>Image Compressor</h3>
-                <p>Compress images without losing quality.</p>
-            </a>
-        </div>
-
-        <!-- Image Converter -->
-        <div class="tool-card">
-            <a href="https://example.com/image-converter" target="_blank" style="text-decoration: none; color: inherit;">
-                <img src="https://via.placeholder.com/60" alt="Image Converter">
-                <h3>Image Converter</h3>
-                <p>Convert images to different formats.</p>
-            </a>
-        </div>
-
-        <!-- Image Resizer -->
-        <div class="tool-card">
-            <a href="https://example.com/image-resizer" target="_blank" style="text-decoration: none; color: inherit;">
-                <img src="https://via.placeholder.com/60" alt="Image Resizer">
-                <h3>Image Resizer</h3>
-                <p>Resize images to your desired dimensions.</p>
-            </a>
-        </div>
-    </div>
-</section>
+                <div class="tool-card">
+                    <a href="https://example.com/image-compressor" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://via.placeholder.com/80" alt="Image Compressor">
+                        <h3>Image Compressor</h3>
+                        <p>Compress images without losing quality.</p>
+                    </a>
                 </div>
                 <div class="tool-card">
-                    <img src="https://via.placeholder.com/60" alt="Image Converter">
-                    <h3>Image Converter</h3>
-                    <p>Convert images to different formats.</p>
+                    <a href="https://example.com/image-converter" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://via.placeholder.com/80" alt="Image Converter">
+                        <h3>Image Converter</h3>
+                        <p>Convert images to different formats.</p>
+                    </a>
                 </div>
                 <div class="tool-card">
-                    <img src="https://via.placeholder.com/60" alt="Image Resizer">
-                    <h3>Image Resizer</h3>
-                    <p>Resize images to your desired dimensions.</p>
+                    <a href="https://example.com/image-resizer" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://via.placeholder.com/80" alt="Image Resizer">
+                        <h3>Image Resizer</h3>
+                        <p>Resize images to your desired dimensions.</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -254,19 +263,25 @@
             <h2>PDF Tools</h2>
             <div class="tool-grid">
                 <div class="tool-card">
-                    <img src="https://via.placeholder.com/60" alt="PDF Compressor">
-                    <h3>PDF Compressor</h3>
-                    <p>Reduce the size of your PDF files.</p>
+                    <a href="https://example.com/pdf-compressor" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://via.placeholder.com/80" alt="PDF Compressor">
+                        <h3>PDF Compressor</h3>
+                        <p>Reduce the size of your PDF files.</p>
+                    </a>
                 </div>
                 <div class="tool-card">
-                    <img src="https://via.placeholder.com/60" alt="PDF to Word">
-                    <h3>PDF to Word</h3>
-                    <p>Convert PDF files to editable Word documents.</p>
+                    <a href="https://example.com/pdf-to-word" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://via.placeholder.com/80" alt="PDF to Word">
+                        <h3>PDF to Word</h3>
+                        <p>Convert PDF files to editable Word documents.</p>
+                    </a>
                 </div>
                 <div class="tool-card">
-                    <img src="https://via.placeholder.com/60" alt="PDF Merger">
-                    <h3>PDF Merger</h3>
-                    <p>Merge multiple PDF files into one.</p>
+                    <a href="https://example.com/pdf-merger" target="_blank" style="text-decoration: none; color: inherit;">
+                        <img src="https://via.placeholder.com/80" alt="PDF Merger">
+                        <h3>PDF Merger</h3>
+                        <p>Merge multiple PDF files into one.</p>
+                    </a>
                 </div>
             </div>
         </section>
@@ -284,4 +299,4 @@
         <p>&copy; 2023 My Tools. All rights reserved.</p>
     </footer>
 </body>
-</html>
+                    </html>
